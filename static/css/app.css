@@ -45,6 +45,8 @@ body.bg04 {background-image:url("../img/bg04.png");}
 .xpanel-wrapper-3 {height:33.33333%;}
 .xpanel-wrapper-10 {height:70%;}
 .xpanel-wrapper-11 {height: 30%;}
+.xpanel-wrapper-60{height: 60%;}
+.xpanel-wrapper-40{height: 40%;}
 .xpanel {
 	padding:15px;
 	height:100%;

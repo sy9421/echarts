@@ -38,24 +38,75 @@
     font-size: 14px;
     color: #999;
   }
-  .table{
-    color: #fff;
+
+  .table tr {
+    border: 1px solid #aca5a5;
+    color: #efebeb;
+    font-family: "黑体";
   }
+
+  .table thead tr th {
+    border-bottom: 1px solid #aca5a5;
+  }
+  .table tbody tr td {
+    border-bottom: 1px solid #aca5a5;
+  }
+
   .table caption{
     text-align: center;
-    color: #f0f0f0;
+    color: #fff;
+    font-weight: bold;
     font-size: 18px;
+    line-height: 36px;
+  }
+  .back{
+    margin-top: 35px;
+    margin-left: 20px;
+    float: left;
+  }
+  .back a{
+    text-decoration: none;
+  }
+  .back button{
+    color: #efebeb;
+    display:flex;
+    align-items: center;
+    background: #053052;
+    border: none;
+  }
+  .back button:hover{
+    color: #3DA0DB;
+    background: #097092;
+  }
+  .title_h3{
+    float:left;
+    position: relative;
+    left: 44.5%;
+    /*text-align: center;*/
+  }
+  .back a svg{
+    margin-top: 7px;
   }
 </style>
 <body class="bg01">
 <header class="header">
-  <h3>上海</h3>
+  <div class="back">
+    <a href="../index.html" style="display: flex;align-items: center">
+      <button type="button" class='btn btn-default'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+        </svg>&nbsp;
+        返回
+      </button>
+    </a>
+  </div>
+  <h3 class="title_h3">上海</h3>
 </header>
 <div class="wrapper">
   <div class="container-fluid">
     <div class="row fill-h">
       <div class="col-lg-3 fill-h">
-        <div class="xpanel-wrapper xpanel-wrapper-2">
+        <div class="xpanel-wrapper xpanel-wrapper-40">
           <div class="xpanel">
             <!-- 第一个框 -->
             <div class="fill-h" id="flyMap">
@@ -153,48 +204,48 @@
                 </p>
               </div>
 
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#acac0a" fill="currentColor"
-                     class="bi bi-person-fill" viewBox="0 0 16 16">
-                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                </svg>
-                <p style="color: #fff">
-                  1825<br>
-                  <span>
-                  员工总数
-                    </span>
-                </p>
-              </div>
+<!--              <div>-->
+<!--                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#acac0a" fill="currentColor"-->
+<!--                     class="bi bi-person-fill" viewBox="0 0 16 16">-->
+<!--                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>-->
+<!--                </svg>-->
+<!--                <p style="color: #fff">-->
+<!--                  1825<br>-->
+<!--                  <span>-->
+<!--                  员工总数-->
+<!--                    </span>-->
+<!--                </p>-->
+<!--              </div>-->
 
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#acac0a" fill="currentColor"
-                     class="bi bi-people-fill" viewBox="0 0 16 16">
-                  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                  <path fill-rule="evenodd"
-                        d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
-                  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                </svg>
-                <p style="color: #fff">
-                  985<br>
-                  <span>
-                  技术研发人员数
-                    </span>
-                </p>
-              </div>
+<!--              <div>-->
+<!--                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#acac0a" fill="currentColor"-->
+<!--                     class="bi bi-people-fill" viewBox="0 0 16 16">-->
+<!--                  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>-->
+<!--                  <path fill-rule="evenodd"-->
+<!--                        d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>-->
+<!--                  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>-->
+<!--                </svg>-->
+<!--                <p style="color: #fff">-->
+<!--                  985<br>-->
+<!--                  <span>-->
+<!--                  技术研发人员数-->
+<!--                    </span>-->
+<!--                </p>-->
+<!--              </div>-->
             </div>
           </div>
         </div>
-        <div class="xpanel-wrapper xpanel-wrapper-2">
+        <div class="xpanel-wrapper xpanel-wrapper-60">
           <div class="xpanel">
             <!-- 第二个框 -->
             <div class="fill-h" id="worldMap">
               <div id="place" style="height: 100%" class="table-responsive">
                 <table class="table">
-                  <caption>响应式表格布局</caption>
+                  <caption>飞地信息</caption>
                   <thead>
                   <tr>
-                    <td>县（市、区）</td>
-                    <th>具体地址</th>
+                    <th>县（市、区）</th>
+                    <th width="150px">具体地址</th>
                     <th>面积㎡</th>
                     <th>运营方式</th>
                   </tr>
@@ -293,24 +344,24 @@
     const scatterGeo = {
       "台州·上海国际创新中心": [121.41, 31.24],
 
-      "温岭市": [121.25, 31.19],
+      "温岭市·上海国际创新中心": [121.25, 31.19],
 
-      "临海市": [121.85, 31.08],
+      "临海市·上海国际创新中心": [121.85, 31.08],
 
-      "玉环市": [121.3,31.28],
+      "玉环市·上海国际创新中心": [121.3,31.28],
 
-      "仙居": [121.41, 31.09],
+      "仙居·上海国际创新中心": [121.41, 31.09],
     }
     const scatterVal = [
-      {name: "台州·上海国际创新中心", address: "上海市新谷大厦"},        //上海在这里
+      {name: "台州·上海国际创新中心", address: "上海市新谷大厦",value: 100},        //上海在这里
 
-      {name: "温岭市", address: "上海市青浦区徐泾镇双联路88号A座6-7层"},
+      {name: "温岭市·上海国际创新中心", address: "上海市青浦区徐泾镇双联路88号A座6-7层", value: 120},
 
-      {name: "临海市", address: "上海浦东新区张衡路666号"},
+      {name: "临海市·上海国际创新中心", address: "上海浦东新区张衡路666号", value: 140},
 
-      {name: "玉环市", address: "上海嘉定区安亭镇于田南路36号"},
+      {name: "玉环市·上海国际创新中心", address: "上海嘉定区安亭镇于田南路36号" ,value: 160},
 
-      {name: "仙居", address: "上海市闵行区"}
+      {name: "仙居·上海国际创新中心", address: "上海市闵行区" ,value: 80}
     ];
 
     const convertScatterData = function (data) {
@@ -335,20 +386,33 @@
           return params.name;
         }
       },
+      visualMap: {
+        show:false,
+        min: 0,
+        max: 200,
+        calculable: false,
+        inRange: {
+          color: ['#50a3ba', '#eac736', '#d94e5d']
+        },
+        textStyle: {
+          color: '#fff'
+        }
+      },
       geo: {
+        silent:true,
         map: '上海',
         roam: true, //开启鼠标缩放和漫游
-        zoom: 1, //地图缩放级别
+        zoom: 1.4, //地图缩放级别
         scaleLimit: {
           min: 1,
-          max: 3
+          max: 1.4
         },
         selectedMode: false, //选中模式：single | multiple
         left: 0,
         right: 0,
         top: 0,
         bottom: 0,
-        layoutCenter: ['50%', '50%'], //设置后left/right/top/bottom等属性无效
+        layoutCenter: ['50%', '29%'], //设置后left/right/top/bottom等属性无效
         layoutSize: '100%', //保持地图宽高比
         label: {
           emphasis: {
@@ -369,9 +433,15 @@
       },
       series: [{
         name: '地点',
-        type: 'scatter',
+        type: 'effectScatter',
         coordinateSystem: 'geo',
-        symbolSize: 20,   //点的大小
+        symbolSize: 60,   //点的大小
+        zlevel: 2,
+        rippleEffect: { //涟漪特效
+          period: 5, //特效动画时长
+          scale: 4, //波纹的最大缩放比例
+          brushType: 'stroke' //波纹的绘制方式：stroke | fill
+        },
         label: {
           normal: {
             show: false
@@ -395,6 +465,14 @@
     provinceMap.setOption(provinceMapOpt);
 
 
+    provinceMap.on('click',function(params){
+      console.log(params.name)
+      switch (params.name){
+        case "台州·上海国际创新中心":
+          window.location.href = "shanghai/taizhou.html";
+          break;
+      }
+    })
 
     //  企业类型饼状图
 

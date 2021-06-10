@@ -10,20 +10,20 @@
   <link rel="stylesheet" href="../static/css/app.css"/>
 </head>
 <style>
-  #flyMap {
+  #firstMap {
     display: flex;
     flex-flow: row wrap;
     margin-left: 50px;
   }
 
-  #flyMap div {
+  #firstMap div {
     width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
   }
 
-  #flyMap div p {
+  #firstMap div p {
     font-size: 26px;
     line-height: 20px;
     /*text-indent: 24px;*/
@@ -33,7 +33,7 @@
     font-weight: bold;
   }
 
-  #flyMap div span {
+  #firstMap div span {
     font-size: 14px;
     color: #999;
   }
@@ -57,7 +57,7 @@
         <div class="xpanel-wrapper xpanel-wrapper-10">
           <div class="xpanel">
             <!-- 第一个框 -->
-            <div class="fill-h" id="flyMap">
+            <div class="fill-h" id="firstMap">
               <div>
                 <span class="icon_wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#f0f0f0" fill="currentColor"
@@ -193,7 +193,7 @@
         <div class="xpanel-wrapper xpanel-wrapper-1">
           <div class="xpanel">
             <!-- 地图散点 -->
-            <div class="fill-h" id="scatterMap"></div>
+            <div class="fill-h" id="flyMap"></div>
           </div>
         </div>
       </div>
@@ -237,64 +237,161 @@
   $(function () {
     /***************** 地图散点 ******************/
       //初始化echarts实例
-    const scatterMap = echarts.init(document.getElementById("scatterMap"));
-
+    const flyMap = echarts.init(document.getElementById("flyMap"));
     //城市经纬度
-    const scatterGeo = {
+    const originName = '台州';
+    const flyGeo = {
 
-      "上海": [121.48, 31.22],   //上海
-
-      "深圳": [114.07, 22.62],
-
-      "杭州": [120.19, 30.26]
-
+      '杭州': [120.015503, 30.253087],
+      '上海': [121.481431, 31.225336],
+      '深圳': [114.073384, 22.620925],
+      '台州': [121.209523, 28.293668]
     };
-    //城市数据
-    const scatterVal = [
-      {name: "上海", num: "6", value: 150},        //上海在这里
+    //飞线数据
+    var flyVal = [
 
-      {name: "深圳", num: "3", value: 150},
-
-      {name: "杭州", num: "4", value: 150}
+      [{name: '台州'}, {name: '杭州', num: "6", value: 145}],
+      [{name: '台州'}, {name: '上海', num: "3", value: 155}],
+      [{name: '台州'}, {name: '深圳', num: "4", value: 150}],
+      [{name: '台州'}, {name: '台州', num: "0", value: 200}],
     ];
+
+
     //数据转换，转换后的格式：[{name: 'cityName', value: [lng, lat, val]}, {...}]
     const convertScatterData = function (data) {
       let res = [];
       for (let i = 0; i < data.length; i++) {
-        let geoCoord = scatterGeo[data[i].name];
-        if (geoCoord) {
+        for (let j = 0; j < data[i].length; j++) {
+          let geoCoord = flyGeo[data[i][j].name];
+          if (geoCoord) {
+            res.push({
+              num: data[i][j].num,
+              name: data[i][j].name,
+              value: geoCoord.concat(data[i][j].value)
+            });
+          }
+        }
+      }
+      return res;
+    };
+    //数据转换，转换后格式：[{fromName:'cityName', toName:'cityName', coords:[[lng, lat], [lng, lat]]}, {...}]
+    const convertFlyData = function (data) {
+      let res = [];
+      for (let i = 0; i < data.length; i++) {
+        let dataItem = data[i];
+        let toCoord = flyGeo[dataItem[0].name];
+        let fromCoord = flyGeo[dataItem[1].name];
+        if (fromCoord && toCoord) {
           res.push({
-            num: data[i].num,
-            name: data[i].name,
-            value: geoCoord.concat(data[i].value)
+            fromName: dataItem[1].name,
+            toName: dataItem[0].name,
+            coords: [fromCoord, toCoord]
           });
         }
       }
       return res;
     };
-    //地图配置项
-    const sactterMapOpt = {
-      // title: {
-      //   text: '飞地一张图',
-      //   x: 'center',
-      //   textStyle: {
-      //     color: '#fff'
-      //   }
-      // },
-      // legend: {
-      //   data: ['地点'], //与series的name属性对应
-      //   orient: 'vertical',
-      //   y: 'bottom',
-      //   x: 'right',
-      //   textStyle: {
-      //     color: '#fff'
-      //   }
-      // },
+    //报表配置
+    const flySeries = [];
+    [[originName, flyVal]].forEach(function (item, i) {
+      flySeries.push({
+          name: item[0],
+          type: 'lines',
+          zlevel: 1,
+          symbol: ['none', 'none'],
+          symbolSize: 0,
+          effect: { //特效线配置
+            show: false,
+            period: 5, //特效动画时间，单位s
+            trailLength: 0.1, //特效尾迹的长度，从0到1
+            symbol: 'arrow',
+            symbolSize: 5
+          },
+          lineStyle: {
+            normal: {
+              color: '#f19000',
+              width: 1,
+              opacity: 0.6,
+              curveness: 0.2 //线的平滑度
+            }
+          },
+          data: convertFlyData(item[1])
+        }, {
+          name: item[0],
+          type: 'effectScatter',
+          coordinateSystem: 'geo',
+          zlevel: 2,
+          rippleEffect: { //涟漪特效
+            period: 5, //特效动画时长
+            scale: 4, //波纹的最大缩放比例
+            brushType: 'stroke' //波纹的绘制方式：stroke | fill
+          },
+          label: {
+            normal: {
+              show: false,
+              position: 'right',
+              formatter: '{b}'
+            }
+          },
+          symbol: 'circle',
+          symbolSize: function (val) {
+            //根据某项数据值设置符号大小
+            // return val[2] / 10;
+            return val[2] / 4;
+          },
+          itemStyle: {
+            normal: {
+              color: '#f19000'
+            }
+          },
+          data: item[1].map(function (dataItem) {
+            return {
+              name: dataItem[1].name,
+              num: dataItem[1].num,
+              value: flyGeo[dataItem[1].name].concat([dataItem[1].value])
+            };
+          })
+        }, { //与上层的点叠加
+          name: item[0],
+          type: 'scatter',
+          coordinateSystem: 'geo',
+          zlevel: 3,
+          symbol: 'circle',
+          symbolSize: function (val) {
+            //根据某项数据值设置符号大小
+            // return val[2] / 15;
+            return val[2] / 4;
+          },
+          itemStyle: {
+            normal: {
+              color: '#f00'
+            }
+          },
+          data: item[1].map(function (dataItem) {
+            return {
+              name: dataItem[1].name,
+              num: dataItem[1].num,
+              value: flyGeo[dataItem[1].name].concat([dataItem[1].value])
+            };
+          })
+        }
+      );
+    });
+
+    //报表配置项
+    const flyMapOpt = {
       tooltip: {
         trigger: 'item',
         formatter: function (params) {
           // return params.name + ' : ' + params.value[2];
-          return params.name + ':' + params.data.num;
+          if(params.data.num != 0){
+            if(params.seriesType != "lines"){
+              return params.name + ':' + params.data.num;
+            }
+          }else {
+            return params.name;
+          }
+
         }
       },
       visualMap: {
@@ -341,48 +438,21 @@
           }
         }
       },
-      series: [{
-        name: '地点',
-        type: 'scatter',
-        coordinateSystem: 'geo',
-        symbolSize: 80,   //点的大小
-        label: {
-          normal: {
-            show: false
-          },
-          emphasis: {
-            show: false
-          }
-        },
-        itemStyle: {
-          normal: {
-            color: '#ff0'
-          },
-          emphasis: {
-            borderColor: '#fff',
-            borderWidth: 1
-          }
-        },
-        data: convertScatterData(scatterVal)
-      }]
+      series: flySeries
     };
     //渲染报表
-    scatterMap.setOption(sactterMapOpt);
-
-
+    flyMap.setOption(flyMapOpt);
 
     /********** 浏览器窗口改变时，重置报表大小 ****************/
     window.onresize = function () {
       flyMap.resize();
-      scatterMap.resize();
-      worldMap.resize();
-      third.resize();
+
       provinceMap.resize();
       cityMap.resize();
       countyMap.resize();
     }
 
-    scatterMap.on('click', function (params) {
+    flyMap.on('click', function (params) {
       switch (params.name){
         case "上海":
           console.log("上海");
@@ -390,11 +460,11 @@
           break;
         case "杭州":
           console.log("杭州");
-          window.location.href = "city/HangZhou.html";
+          window.location.href = "city/ShangHai.html";
           break;
         case "深圳":
           console.log("深圳");
-          window.location.href = "city/ShenZhen.html";
+          window.location.href = "city/ShangHai.html";
           break;
       }
     });
