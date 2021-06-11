@@ -26,13 +26,39 @@
     width: 100%;
     height: auto;
   }
+  .first-table{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .first-table table{
+    color: #efebeb;
+    line-height: 36px;
+    font-size: 14px;
+  }
+
+  .first-table tr td:first-child {
+
+  }
+
+  .first-table tr th {
+
+  }
+  .first_project,.second_project{
+    display: flex;
+    flex-direction: row;
+
+    height: 100px;
+  }
+  .first_project div:first-child,.second_project div:first-child{
+    margin-right: 70px;
+  }
   .logo{
     width: 100px;
-    height: 56px;
     background: #fff;
     display: flex;
     align-items: center;
-    margin-bottom: 180px;
     padding: 8px;
   }
   .picture {
@@ -53,15 +79,9 @@
     color: #fff;
     text-align: center;
   }
-
-
-  .first-table tr td:first-child {
-
+  .table{
+    width: 95%;
   }
-
-  .first-table tr th {
-  }
-
 
   .table tr {
     border: 1px solid #aca5a5;
@@ -75,11 +95,15 @@
   .table tbody tr td {
     border-bottom: 1px solid #aca5a5;
   }
+  .table tbody tr th{
+    text-align: center;
+  }
 
   .icon_wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 150px;
   }
 
   .icon_wrapper p {
@@ -122,7 +146,7 @@
   .title_h3{
     float:left;
     position: relative;
-    left: 42.5%;
+    left: 40%;
   }
 
   .back a svg{
@@ -134,6 +158,34 @@
   h5{
     font-size: 18px;
     color: #fff;
+  }
+  .logo img{
+    width: 100%;
+    height: auto;
+  }
+  .first_logo,.second_company_info,.company_detail{
+    color:#efebeb;
+  }
+  .first_logo{
+    float: left;
+  }
+  .logo,.second_company_info{
+    height: 75px;
+  }
+  .second_company_info{
+    float: right;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    width: 60%;
+  }
+  .company_detail{
+    clear: both;
+    padding-top: 10px;
+  }
+  .company_detail table{
+    width: 100%;
+    line-height: 40px;
   }
 </style>
 <body class="bg01">
@@ -157,101 +209,83 @@
         <div class="xpanel-wrapper xpanel-wrapper-2">
           <div class="">
             <!-- 第一个框 -->
-            <div class="fill-h company_info table-responsive first-table" id="flyMap">
+            <div class="fill-h table-responsive first-table" id="flyMap">
               <table>
                 <tr>
                   <th colspan="2"><h4>台州（上海）国际创新中心</h4></th>
                 </tr>
                 <tr>
-                  <td colspan="2">面积：3895.48平方</td>
+                  <td>面积：</td>
+                  <td>3895.48㎡</td>
+                </tr>
+                <tr>
+                  <td>成立时间：</td>
+                  <td>2016年</td>
+                </tr>
+                <tr>
+                  <td>运营商：</td>
+                  <td>上海新谷国际</td>
+                </tr>
+                <tr>
+                  <td >地址：</td>
+                  <td >上海市杨浦区国权北路1688号湾谷科技园</td>
+                </tr>
+                <tr>
+                  <td >飞地评星：</td>
+                  <td ><span style="color: #ff0;font-size: 20px">★★★★</span></td>
+                </tr>
 
-                </tr>
-                <tr>
-                  <td colspan="2">成立时间：2016年</td>
-                </tr>
-                <tr>
-                  <td colspan="2">运营商：上海新谷国际</td>
-                </tr>
-                <tr>
-                  <td colspan="2">地址：上海市杨浦区国权北路1688号湾谷科技园</td>
-                </tr>
-                <tr>
-                  <td colspan="2">飞地评星：<span style="color: #ff0">★★★★</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="icon_wrapper">
-                      <span class="icon_wrapper">
+              </table>
+              <div class="first_project">
+                <div class="icon_wrapper">
+                      <span>
                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#ff0"
                             fill="currentColor" class="bi bi-flag-fill" viewBox="0 0 16 16">
                          <path
                            d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001"/>
                        </svg>
                       </span>
-                      <p>11<br>
-                        <span>入驻项目</span>
-                      </p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="icon_wrapper ml-10  ">
-                      <span class="icon_wrapper">
+                  <p>11<br>
+                    <span>入驻项目</span>
+                  </p>
+                </div>
+                <div class="icon_wrapper ">
+                      <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#a6c84f" fill="currentColor"
                              class="bi bi-cursor-fill" viewBox="0 0 16 16">
                           <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
                         </svg>
                       </span>
-                      <p>9<br>
-                        <span>重点推进项目</span>
-                      </p>
-                    </div>
+                  <p>9<br>
+                    <span>重点推进项目</span>
+                  </p>
+                </div>
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="icon_wrapper">
-                      <span class="icon_wrapper">
+              </div>
+
+              <div class="second_project">
+                <div class="icon_wrapper">
+                      <span>
                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" color="#e03f37" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
                        </svg>
                       </span>
-                      <p>4<br>
-                        <span>项目落地</span>
-                      </p>
-                    </div>
+                  <p>4<br>
+                    <span>项目落地</span>
+                  </p>
+                </div>
 
-                  </td>
-                  <td>
-                    <div class="icon_wrapper ml-10">
-                      <span class="icon_wrapper">
+                <div class="icon_wrapper">
+                      <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" color="#9260f7" class="bi bi-ui-checks" viewBox="0 0 16 16">
                           <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708l-2 2zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708l-2 2zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
                         </svg>
                       </span>
-                      <p>2<br>
-                        <span>B类项目</span>
-                      </p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="icon_wrapper">
-                      <span class="icon_wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" color="#acac0a" class="bi bi-ui-radios" viewBox="0 0 16 16">
-                          <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zM0 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm7-1.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zM3 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                        </svg>
-                      </span>
-                      <p>1<br>
-                        <span>C类项目</span>
-                      </p>
-                    </div>
-                  </td>
-                </tr>
-
-
-              </table>
+                  <p>2<br>
+                    <span>B类项目</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -272,55 +306,55 @@
                   </thead>
                   <tbody>
                   <tr>
-                    <td>1</td>
+                    <th>1</th>
                     <td>上海锐明轨道交通辅助系统项目</td>
                     <td>500万</td>
                     <td>5000㎡</td>
                   </tr>
                   <tr>
-                    <td>2</td>
+                    <th>2</th>
                     <td>上海蔚星科技项目</td>
                     <td>600万</td>
                     <td>5800㎡</td>
                   </tr>
                   <tr>
-                    <td>3</td>
+                    <th>3</th>
                     <td>美国新宿科技医疗项目</td>
                     <td>700万</td>
                     <td>5700㎡</td>
                   </tr>
                   <tr>
-                    <td>4</td>
+                    <th>4</th>
                     <td>中科院飞雷神医疗器械项目</td>
                     <td>800万</td>
                     <td>5600㎡</td>
                   </tr>
                   <tr>
-                    <td>5</td>
+                    <th>5</th>
                     <td>澳大利亚智能血液检测平台项目</td>
                     <td>900万</td>
                     <td>5500㎡</td>
                   </tr>
                   <tr>
-                    <td>6</td>
+                    <th>6</th>
                     <td>500B类项目伊布科技</td>
                     <td>1000万</td>
                     <td>5400㎡</td>
                   </tr>
                   <tr>
-                    <td>7</td>
+                    <th>7</th>
                     <td>机至数科</td>
                     <td>1100万</td>
                     <td>5300㎡</td>
                   </tr>
                   <tr>
-                    <td>8</td>
+                    <th>8</th>
                     <td>Pzartech</td>
                     <td>1200万</td>
                     <td>5200㎡</td>
                   </tr>
                   <tr>
-                    <td>9</td>
+                    <th>9</th>
                     <td>胰岛素生长因子</td>
                     <td>1300万</td>
                     <td>5100㎡</td>
@@ -349,7 +383,7 @@
 
             <div class="fill-h table-responsive picture" id="picture2">
 
-              <img src="../../../static/img/company/1.jpg">
+              <img src="../../../static/img/company/1.jpg" id="img111">
 
               <img src="../../../static/img/company/2.png">
 
@@ -372,81 +406,61 @@
         <div class="xpanel-wrapper xpanel-wrapper-2">
           <div class="xpanel">
             <!-- 右边第一个 -->
-            <div class="fill-h company_info table-responsive" id="right2-first">
-              <div class="logo">
-                <img src="../../../static/img/logo-badge-1212.png">
-              </div>
+            <div class="fill-h" id="right2-first">
 
-              <table>
-                <tr>
-                  <td colspan="2" class="center"><h5>上海蔚星科技</h5></td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="center">
-                    www.vsattech.com
-                  </td>
-                </tr>
-                <tr>
-                  <td>创立时间：</td>
-                  <td>2016年</td>
-                </tr>
-                <tr>
-                  <td>所属行业：</td>
-                  <td>航空航天</td>
-                </tr>
-                <tr>
-                  <td>注册资本：</td>
-                  <td>1000万</td>
-                </tr>
-                <tr>
-                  <td>公司规模：</td>
-                  <td>50-200人</td>
-                </tr>
-                <tr>
-                  <td>项目评分：</td>
-                  <td>87</td>
-                </tr>
-              </table>
+              <div class="first_logo">
+                <div class="logo">
+                  <img src="../../../static/img/logo-badge-1212.png">
+                </div>
+              </div>
+              <div class="second_company_info">
+
+                <h5>上海蔚星科技</h5>
+                <p>www.vsattech.com</p>
+              </div>
+              <div class="company_detail">
+                <table>
+                  <tr>
+                    <td>创立时间：2016年</td>
+                    <td>所属行业：航空航天</td>
+                  </tr>
+                  <tr>
+                    <td>注册资本：1000万</td>
+                    <td>公司规模：50-200人</td>
+                  </tr>
+                </table>
+              </div>
+              <div id="container1" style="height: 50%;"></div>
             </div>
           </div>
         </div>
         <div class="xpanel-wrapper xpanel-wrapper-2">
           <div class="xpanel">
             <!--第二个-->
-            <div class="fill-h company_info table-responsive" id="right2-second">
-              <div class="logo">
-              <img src="../../../static/img/789456414.png">
+            <div class="fill-h" id="right2-second">
+              <div class="first_logo">
+                <div class="logo">
+                  <img src="../../../static/img/789456414.png">
+                </div>
               </div>
-              <table>
-                <tr>
-                  <td colspan="2" class="center"><h5>机至数科</h5></td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="center">
-                    www.jizhi.group
-                  </td>
-                </tr>
-                <tr>
-                  <td>创立时间：</td>
-                  <td>2020年</td>
-                </tr>
-                <tr>
-                  <td>所属行业：</td>
-                  <td>物联网</td>
-                </tr>
-                <tr>
-                  <td>注册资本：</td>
-                  <td>1000万</td>
-                </tr>
-                <tr>
-                  <td>公司规模：</td>
-                  <td>50-200人</td>
-                </tr>
-                <tr>
-                  <td>项目评分：</td>
-                  <td>76</td>
-                </tr>
-              </table>
+              <div class="second_company_info">
+
+                  <h5>机至数科</h5>
+                <p>www.jizhi.group</p>
+              </div>
+              <div class="company_detail">
+                <table>
+                  <tr>
+                    <td>创立时间：2016年</td>
+                    <td>所属行业：物联网</td>
+                  </tr>
+                  <tr>
+                    <td>注册资本：1000万</td>
+                    <td>公司规模：50-200人</td>
+                  </tr>
+                </table>
+              </div>
+              <div id="container2" style="height: 50%;"></div>
             </div>
           </div>
         </div>
@@ -456,80 +470,62 @@
         <div class="xpanel-wrapper xpanel-wrapper-2">
           <div class="xpanel">
             <!-- 右边第一个 -->
-            <div class="fill-h company_info table-responsive" id="right-first">
-              <div class="logo">
-                <img src="../../../static/img/logo_Motion.png">
+            <div class="fill-h " id="right-first">
+
+              <div class="first_logo">
+                <div class="logo">
+                  <img src="../../../static/img/logo_Motion.png">
+                </div>
               </div>
-              <table>
-                <tr>
-                  <td colspan="2" class="center"><h5>台州麒至信息科技有限公司</h5></td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="center">
-                    www.qzintel.com
-                  </td>
-                </tr>
-                <tr>
-                  <td>创立时间：</td>
-                  <td>2021年</td>
-                </tr>
-                <tr>
-                  <td>所属行业：</td>
-                  <td>智能制造</td>
-                </tr>
-                <tr>
-                  <td>注册资本：</td>
-                  <td>500万</td>
-                </tr>
-                <tr>
-                  <td>公司规模：</td>
-                  <td>10-50人</td>
-                </tr>
-                <tr>
-                  <td>项目评分：</td>
-                  <td>72</td>
-                </tr>
-              </table>
+              <div class="second_company_info">
+
+                <h5>台州麒至信息科技有限公司</h5>
+                <p>www.qzintel.com</p>
+              </div>
+              <div class="company_detail">
+                <table>
+                  <tr>
+                    <td>创立时间：2021年</td>
+                    <td>所属行业：智能制造</td>
+                  </tr>
+                  <tr>
+                    <td>注册资本：500万</td>
+                    <td>公司规模：10-50人</td>
+                  </tr>
+                </table>
+              </div>
+              <div id="container3" style="height: 50%;"></div>
             </div>
           </div>
         </div>
         <div class="xpanel-wrapper xpanel-wrapper-2">
           <div class="xpanel">
             <!--第二个-->
-            <div class="fill-h company_info table-responsive" id="right-second">
-              <div class="logo">
-                <img src="../../../static/img/logo.png">
+            <div class="fill-h" id="right-second">
+
+              <div class="first_logo">
+                <div class="logo">
+                  <img src="../../../static/img/logo.png">
+                </div>
               </div>
-              <table>
-                <tr>
-                  <td colspan="2" class="center"><h5>浙江谟绅</h5></td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="center">
-                    www.motionshanghai.com
-                  </td>
-                </tr>
-                <tr>
-                  <td>创立时间：</td>
-                  <td>2011年</td>
-                </tr>
-                <tr>
-                  <td>所属行业：</td>
-                  <td>电子科技</td>
-                </tr>
-                <tr>
-                  <td>注册资本：</td>
-                  <td>2800万</td>
-                </tr>
-                <tr>
-                  <td>公司规模：</td>
-                  <td>10-50人</td>
-                </tr>
-                <tr>
-                  <td>项目评分：</td>
-                  <td>69</td>
-                </tr>
-              </table>
+              <div class="second_company_info">
+                <h5>浙江谟绅</h5>
+                <p>www.motionshanghai.com</p>
+              </div>
+              <div class="company_detail">
+                <table>
+                  <tr>
+                    <td>创立时间：2011年</td>
+                    <td>所属行业：电子科技</td>
+                  </tr>
+                  <tr>
+                    <td>注册资本：2800万</td>
+                    <td>公司规模：10-50人</td>
+                  </tr>
+                </table>
+
+              </div>
+              <div id="container4" style="height: 50%;"></div>
             </div>
           </div>
         </div>
@@ -539,14 +535,120 @@
   </div>
 </div>
 
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/echarts-nightly@5.1.2-dev.20210512/dist/echarts.min.js"></script>
+<div id="img-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width:90%;">
+    <div class="modal-content center">
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-nightly@5.1.2-dev.20210512/dist/echarts.min.js"></script>
 <script type="text/javascript" src="../../../static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../static/js/echarts-3.8.5.min.js"></script>
 <script type="text/javascript" src="../../../static/js/echarts-map-china.js"></script>
 
 <script>
 
+
+  var dom2 = document.getElementById("container2");
+  var myChart2 = echarts.init(dom2);
+
+  var dom3 = document.getElementById("container3");
+  var myChart3 = echarts.init(dom3);
+
+  var dom4 = document.getElementById("container4");
+  var myChart4 = echarts.init(dom4);
+
+
+  var dom1 = document.getElementById("container1");
+  var myChart1 = echarts.init(dom1);
+  var option;
+  var app = {};
+
+  function option1(value){
+    option = {
+      title: {
+        text:"项目评分",
+        textStyle: {
+          color: '#fff'
+        },
+        left: 'center'
+      },
+      series: [{
+        radius:'100%',
+        center:['50%','65%'],
+        type: 'gauge',
+        progress: {
+          show: true,
+          width: 14
+        },
+        axisLine: {
+          lineStyle: {
+            width: 14
+          }
+        },
+        axisTick: {
+          show: false
+        },
+        splitLine: {
+          length: 15,
+          lineStyle: {
+            width: 2,
+            color: '#999'
+          }
+        },
+        axisLabel: {
+          distance: 25,
+          color: '#999',
+          fontSize: 10
+        },
+        anchor: {
+          show: true,
+          showAbove: true,
+          size: 25,
+          itemStyle: {
+            borderWidth: 10
+          }
+        },
+        title: {
+          show: false
+        },
+        detail: {
+          valueAnimation: true,
+          fontSize: 30,
+          offsetCenter: [0, '60%']
+        },
+        data: [{
+          value: value
+        }]
+      }]
+    };
+    return option;
+  }
+
+
+  option = option1(1);
+  if (option && typeof option === 'object') {
+    console.log(option1(75),"=======================>");
+    myChart1.setOption(option1(87));
+    myChart2.setOption(option1(76));
+    myChart3.setOption(option1(72));
+    myChart4.setOption(option1(69));
+  }
+
+
+  $('.picture img').click(function(){
+    var img_html = $(this).prop("outerHTML");
+    $('#img-modal .modal-content').html(img_html);
+    $('#img-modal').modal('show');
+    // 点击隐藏 modal
+    $('#img-modal .modal-content img').click(function(){
+      $('#img-modal').modal('hide');
+    })
+  });
 </script>
 </body>
 </html>
