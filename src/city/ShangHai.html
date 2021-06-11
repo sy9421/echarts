@@ -507,7 +507,11 @@
     //  企业类型饼状图
 
     var enterprise = document.getElementById("enterprise");
+<<<<<<< HEAD
     var myChart1 = echarts.init(enterprise);
+=======
+    var myChart = echarts.init(enterprise);
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
     var app = {};
 
     var option;
@@ -562,7 +566,11 @@
     //资金补贴 条形图
 
     var subsidies = document.getElementById("subsidies");
+<<<<<<< HEAD
     var myChart2 = echarts.init(subsidies);
+=======
+    var myChart = echarts.init(subsidies);
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
     var app = {};
 
     var option;
@@ -618,7 +626,11 @@
 
     //雷达图
     var technology = document.getElementById("technology");
+<<<<<<< HEAD
     var myChart3 = echarts.init(technology);
+=======
+    var myChart = echarts.init(technology);
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
     var app = {};
 
     var option;
@@ -676,6 +688,15 @@
       myChart1.resize();
       myChart2.resize();
       myChart3.resize();
+    }
+    
+    /********** 浏览器窗口改变时，重置报表大小 ****************/
+    window.onresize = function () {
+
+      provinceMap.resize();
+      enterprise.resize();
+      subsidies.resize();
+      technology.resize();
     }
   })
 </script>

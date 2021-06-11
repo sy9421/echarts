@@ -538,8 +538,11 @@
     //渲染报表
     flyMap.setOption(flyMapOpt);
 
+<<<<<<< HEAD
     /********** 浏览器窗口改变时，重置报表大小 ****************/
 
+=======
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
 
     flyMap.on('click', function (params) {
       switch (params.name) {
@@ -560,7 +563,11 @@
     //  企业类型饼状图
 
     var subsidies = document.getElementById("subsidies");
+<<<<<<< HEAD
     var myChart1 = echarts.init(subsidies);
+=======
+    var myChart = echarts.init(subsidies);
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
     var app = {};
 
     var option;
@@ -613,7 +620,11 @@
     //资金补贴 条形图
 
     var technology = document.getElementById("technology");
+<<<<<<< HEAD
     var myChart2 = echarts.init(technology);
+=======
+    var myChart = echarts.init(technology);
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
     var app = {};
 
     var option;
@@ -668,7 +679,11 @@
 
     //飞地  横向柱状图
     var place = document.getElementById("place");
+<<<<<<< HEAD
     var myChart3 = echarts.init(place);
+=======
+    var myChart = echarts.init(place);
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
     var app = {};
 
     var option;
@@ -724,7 +739,11 @@
     //笛卡尔坐标系
 
     var cityMap = document.getElementById("cityMap");
+<<<<<<< HEAD
     var myChart4 = echarts.init(cityMap);
+=======
+    var myChart = echarts.init(cityMap);
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
     var app = {};
 
     var option;
@@ -852,11 +871,20 @@
     // }
     /********** 浏览器窗口改变时，重置报表大小 ****************/
     window.onresize = function () {
+<<<<<<< HEAD
       flyMap.resize();
       myChart1.resize();
       myChart2.resize();
       myChart3.resize();
       myChart4.resize();
+=======
+
+      flyMap.resize();
+      cityMap.resize();
+      place.resize();
+      technology.resize();
+      subsidies.resize();
+>>>>>>> c1866dccb49fea55776fa32264dfd61ffa05c931
     }
 
   });
