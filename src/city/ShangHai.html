@@ -57,11 +57,11 @@
   }
 
   .table caption{
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 36px;
+    /*text-align: center;*/
+    /*color: #fff;*/
+    /*font-weight: bold;*/
+    /*font-size: 18px;*/
+    /*line-height: 36px;*/
   }
   .back{
     margin-top: 35px;
@@ -506,8 +506,8 @@
 
     //  企业类型饼状图
 
-    var dom = document.getElementById("enterprise");
-    var myChart = echarts.init(dom);
+    var enterprise = document.getElementById("enterprise");
+    var myChart = echarts.init(enterprise);
     var app = {};
 
     var option;
@@ -561,8 +561,8 @@
 
     //资金补贴 条形图
 
-    var dom = document.getElementById("subsidies");
-    var myChart = echarts.init(dom);
+    var subsidies = document.getElementById("subsidies");
+    var myChart = echarts.init(subsidies);
     var app = {};
 
     var option;
@@ -617,8 +617,8 @@
 
 
     //雷达图
-    var dom = document.getElementById("technology");
-    var myChart = echarts.init(dom);
+    var technology = document.getElementById("technology");
+    var myChart = echarts.init(technology);
     var app = {};
 
     var option;
@@ -667,6 +667,15 @@
 
     if (option && typeof option === 'object') {
       myChart.setOption(option);
+    }
+    
+    /********** 浏览器窗口改变时，重置报表大小 ****************/
+    window.onresize = function () {
+
+      provinceMap.resize();
+      enterprise.resize();
+      subsidies.resize();
+      technology.resize();
     }
   })
 </script>
