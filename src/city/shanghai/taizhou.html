@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
   <title>台州（上海）国际创新中心</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
   <link rel="stylesheet" href="../../../static/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="../../../static/css/app.css"/>
 </head>
@@ -154,6 +155,7 @@
   }
   h4{
     font-size: 20px;
+    text-align: left;
   }
   h5{
     font-size: 18px;
@@ -171,6 +173,9 @@
   }
   .logo,.second_company_info{
     height: 75px;
+  }
+  .first_logo,.second_company_info{
+    margin-top: 5px;
   }
   .second_company_info{
     float: right;
@@ -218,10 +223,10 @@
                   <td>面积：</td>
                   <td>3895.48㎡</td>
                 </tr>
-                <tr>
-                  <td>成立时间：</td>
-                  <td>2016年</td>
-                </tr>
+<!--                <tr>-->
+<!--                  <td>成立时间：</td>-->
+<!--                  <td>2016年</td>-->
+<!--                </tr>-->
                 <tr>
                   <td>运营商：</td>
                   <td>上海新谷国际</td>
@@ -353,12 +358,12 @@
                     <td>1200万</td>
                     <td>5200㎡</td>
                   </tr>
-                  <tr>
-                    <th>9</th>
-                    <td>胰岛素生长因子</td>
-                    <td>1300万</td>
-                    <td>5100㎡</td>
-                  </tr>
+<!--                  <tr>-->
+<!--                    <th>9</th>-->
+<!--                    <td>胰岛素生长因子</td>-->
+<!--                    <td>1300万</td>-->
+<!--                    <td>5100㎡</td>-->
+<!--                  </tr>-->
 
                   </tbody>
                 </table>
@@ -385,7 +390,7 @@
 
               <img src="../../../static/img/company/1.jpg" id="img111">
 
-              <img src="../../../static/img/company/2.png">
+              <img src="../../../static/img/company/7.jpg">
 
               <img src="../../../static/img/company/3.jpg">
 
@@ -538,7 +543,7 @@
 <div id="img-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
      aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog" style="max-width:90%;">
-    <div class="modal-content center">
+    <div class="modal-content">
 
     </div>
   </div>
@@ -578,7 +583,7 @@
         left: 'center'
       },
       series: [{
-        radius:'100%',
+        radius:'90%',
         center:['50%','65%'],
         type: 'gauge',
         progress: {

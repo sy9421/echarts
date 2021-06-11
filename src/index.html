@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
   <title>飞地一张图</title>
-  <link rel="stylesheet" href="../static/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        integrity="undefined" crossorigin="anonymous">
   <link rel="stylesheet" href="../static/css/app.css"/>
 </head>
 <style>
@@ -37,6 +38,42 @@
     font-size: 14px;
     color: #999;
   }
+
+  h5 {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .table1 {
+    color: #ffffff;
+    border: none;
+    width: 100%;
+  }
+
+  .table1 tr td:first-child {
+    text-align: center;
+    font-size: 20px;
+    width: 30%;
+    line-height: 35px;
+  }
+  .td2{
+    width: 30%;
+  }
+  .table1 tr td:last-child {
+    text-align: left;
+    width: 10%;
+  }
+
+  .histogram {
+    height: 15px;
+    width: 50px;
+    float: left;
+    margin-top: 6px;
+    background: #f0ad4e;
+
+  }
+
   /*.icon_wrapper{*/
   /*  background: #13224d;*/
   /*  border-radius: 50%;*/
@@ -54,7 +91,7 @@
   <div class="container-fluid">
     <div class="row fill-h">
       <div class="col-lg-3 fill-h">
-        <div class="xpanel-wrapper xpanel-wrapper-10">
+        <div class="xpanel-wrapper xpanel-wrapper-3">
           <div class="xpanel">
             <!-- 第一个框 -->
             <div class="fill-h" id="firstMap">
@@ -119,9 +156,12 @@
               </div>
 
               <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" color="#9260f7" class="bi bi-wallet-fill" viewBox="0 0 16 16">
-                  <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                  <path d="M16 6.5h-5.551a2.678 2.678 0 0 1-.443 1.042C9.613 8.088 8.963 8.5 8 8.5c-.963 0-1.613-.412-2.006-.958A2.679 2.679 0 0 1 5.551 6.5H0v6A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" color="#9260f7"
+                     class="bi bi-wallet-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                  <path
+                    d="M16 6.5h-5.551a2.678 2.678 0 0 1-.443 1.042C9.613 8.088 8.963 8.5 8 8.5c-.963 0-1.613-.412-2.006-.958A2.679 2.679 0 0 1 5.551 6.5H0v6A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6z"/>
                 </svg>
 
                 <p style="color: #fff">
@@ -149,42 +189,93 @@
                 </p>
               </div>
 
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#acac0a" fill="currentColor"
-                     class="bi bi-person-fill" viewBox="0 0 16 16">
-                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                </svg>
-                <p style="color: #fff">
-                  1825<br>
-                  <span>
-                  员工总数
-                    </span>
-                </p>
-              </div>
+              <!--              <div>-->
+              <!--                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#acac0a" fill="currentColor"-->
+              <!--                     class="bi bi-person-fill" viewBox="0 0 16 16">-->
+              <!--                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>-->
+              <!--                </svg>-->
+              <!--                <p style="color: #fff">-->
+              <!--                  1825<br>-->
+              <!--                  <span>-->
+              <!--                  员工总数-->
+              <!--                    </span>-->
+              <!--                </p>-->
+              <!--              </div>-->
 
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#acac0a" fill="currentColor"
-                     class="bi bi-people-fill" viewBox="0 0 16 16">
-                  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                  <path fill-rule="evenodd"
-                        d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
-                  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                </svg>
-                <p style="color: #fff">
-                  985<br>
-                  <span>
-                  技术研发人员数
-                    </span>
-                </p>
+              <!--              <div>-->
+              <!--                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" color="#acac0a" fill="currentColor"-->
+              <!--                     class="bi bi-people-fill" viewBox="0 0 16 16">-->
+              <!--                  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>-->
+              <!--                  <path fill-rule="evenodd"-->
+              <!--                        d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>-->
+              <!--                  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>-->
+              <!--                </svg>-->
+              <!--                <p style="color: #fff">-->
+              <!--                  985<br>-->
+              <!--                  <span>-->
+              <!--                  技术研发人员数-->
+              <!--                    </span>-->
+              <!--                </p>-->
+              <!--              </div>-->
+            </div>
+          </div>
+        </div>
+        <div class="xpanel-wrapper xpanel-wrapper-3">
+          <div class="xpanel">
+            <!-- 第二个框 -->
+            <div class="fill-h" id="worldMap">
+
+              <div id="enterprise" style="height: 100%">
+                <h5>飞地评星</h5>
+                <table class="table1">
+                  <tr>
+                    <td>
+                      <span style="color: #ff0">★</span>☆☆☆☆
+                    </td>
+                    <td class="td">
+                      <div class="histogram" style="width: 80%"></div>
+                    </td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td><span style="color: #ff0">★★</span>☆☆☆</td>
+                    <td class="td">
+                      <div class="histogram" style="width: 30%"></div>
+                    </td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td><span style="color: #ff0">★★★</span>☆☆</td>
+                    <td class="td">
+                      <div class="histogram" style="width: 25%"></div>
+                    </td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td><span style="color: #ff0">★★★★</span>☆</td>
+                    <td class="td">
+                      <div class="histogram" style="width: 20%"></div>
+                    </td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td><span style="color: #ff0">★★★★★</span></td>
+                    <td class="td">
+                      <div class="histogram" style="width: 10%"></div>
+                    </td>
+                    <td>0</td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
         </div>
-        <div class="xpanel-wrapper xpanel-wrapper-11">
+        <div class="xpanel-wrapper xpanel-wrapper-3">
           <div class="xpanel">
             <!-- 第二个框 -->
-            <div class="fill-h" id="worldMap">
-              <div id="place" style="height: 100%"></div>
+            <div class="fill-h" id="secondXpanel">
+              <div id="subsidies" style="height: 100%"></div>
+
             </div>
           </div>
         </div>
@@ -202,7 +293,7 @@
           <div class="xpanel">
             <!-- 右边第一个 -->
             <div class="fill-h" id="provinceMap">
-              <div id="enterprise" style="height: 100%"></div>
+              <div id="place" style="height: 100%"></div>
             </div>
           </div>
         </div>
@@ -210,7 +301,7 @@
           <div class="xpanel">
             <!--第二个-->
             <div class="fill-h" id="cityMap">
-              <div id="subsidies" style="height: 100%"></div>
+
             </div>
           </div>
         </div>
@@ -384,18 +475,18 @@
         trigger: 'item',
         formatter: function (params) {
           // return params.name + ' : ' + params.value[2];
-          if(params.data.num != 0){
-            if(params.seriesType != "lines"){
+          if (params.data.num != 0) {
+            if (params.seriesType != "lines") {
               return params.name + ':' + params.data.num;
             }
-          }else {
+          } else {
             return params.name;
           }
 
         }
       },
       visualMap: {
-        show:false,
+        show: false,
         min: 0,
         max: 200,
         calculable: false,
@@ -407,7 +498,7 @@
         }
       },
       geo: {
-        silent:true,    //关闭鼠标滑过的效果
+        silent: true,    //关闭鼠标滑过的效果
         map: 'china',
         roam: true, //开启鼠标缩放和漫游
         scaleLimit: { //滚轮缩放的极限控制
@@ -446,14 +537,10 @@
     /********** 浏览器窗口改变时，重置报表大小 ****************/
     window.onresize = function () {
       flyMap.resize();
-
-      provinceMap.resize();
-      cityMap.resize();
-      countyMap.resize();
     }
 
     flyMap.on('click', function (params) {
-      switch (params.name){
+      switch (params.name) {
         case "上海":
           console.log("上海");
           window.location.href = "city/ShangHai.html";
@@ -470,7 +557,7 @@
     });
     //  企业类型饼状图
 
-    var dom = document.getElementById("enterprise");
+    var dom = document.getElementById("subsidies");
     var myChart = echarts.init(dom);
     var app = {};
 
@@ -478,7 +565,7 @@
 
     option = {
       title: {
-        text: '企业类型',
+        text: '运营商评级',
         textStyle: {
           color: '#fff'
         },
@@ -496,7 +583,7 @@
 
       series: [
         {
-          name: '企业类型',
+          name: '运营商评级',
           type: 'pie',
           radius: [20, 90],
           center: ['50%', '60%'],
@@ -505,14 +592,12 @@
             borderRadius: 5
           },
           data: [
-            {value: 30, name: '综合产业'},
-            {value: 28, name: '生物医药'},
-            {value: 26, name: '智能制造'},
-            {value: 24, name: '新兴产业'},
-            {value: 22, name: '数字经济'},
-            {value: 20, name: '汽车零部件'},
-            {value: 18, name: '电子信息'},
-            {value: 16, name: '机电产业'}
+            {value: 30, name: 'A级'},
+            {value: 28, name: 'B级'},
+            {value: 26, name: 'C级'},
+            {value: 24, name: 'D级'},
+            {value: 22, name: 'E级'},
+            {value: 20, name: 'F级'}
           ]
         }
       ]
@@ -525,7 +610,7 @@
 
     //资金补贴 条形图
 
-    var dom = document.getElementById("subsidies");
+    var dom = document.getElementById("technology");
     var myChart = echarts.init(dom);
     var app = {};
 
@@ -596,7 +681,7 @@
         left: 'center'
       },
       xAxis: {
-        max:8,
+        max: 8,
         type: 'value',
         axisLine: {
           lineStyle: {
@@ -615,9 +700,9 @@
         }
       },
       series: [{
-        itemStyle:{
-          normal:{
-            color:'#acac0a'
+        itemStyle: {
+          normal: {
+            color: '#acac0a'
           }
         },
         barWidth: 15,
@@ -634,59 +719,135 @@
       myChart.setOption(option);
     }
 
+    //笛卡尔坐标系
 
-    //雷达图
-    var dom = document.getElementById("technology");
+    var dom = document.getElementById("cityMap");
     var myChart = echarts.init(dom);
     var app = {};
 
     var option;
 
 
+    var axisData = ['60', '70', '80', '90', '100'];
+    var data = [60, 30, 100, 50, 40]
+    console.log(data, "=======================>data")
+    var links = data.map(function (item, i) {
+      return {
+        source: i,
+        target: i + 1
+      };
+    });
+    links.pop();
     option = {
       title: {
-        text: '人才引进',
+        text: '项目评分',
         textStyle: {
           color: '#fff'
         },
         left: 'center'
       },
-      // legend: {
-      //   data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）'],
-      // },
-      radar: {
-        radius: 60,
-        center: ['50%', '55%'],
-        // shape: 'circle',
-        indicator: [
-          {name: '博士', max: 1000},
-          {name: '普通本科', max: 1000},
-          {name: '重点本科 ', max: 1000},
-          {name: '硕士', max: 1000},
-          {name: '大专', max: 1000}
-          // {name: '市场（Marketing）', max: 25000}
-        ]
+      tooltip: {},
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: axisData,
+        axisLine: {
+          lineStyle: {
+            color: '#fff'
+          }
+        }
       },
-      series: [{
-        itemStyle:{
-          normal:{
-            color: '#3C9FDA'
+      yAxis: {
+        type: 'value',
+        axisLine: {
+          lineStyle: {
+            color: '#fff'
           }
-        },
-        // name: '预算 vs 开销（Budget vs spending）',
-        type: 'radar',
-        data: [
-          {
-            value: [423, 600, 911, 851,904 ],
-            name: '实际开销（Actual Spending）'
-          }
-        ]
-      }]
+        }
+      },
+      series: [
+        {
+          type: 'graph',
+          layout: 'none',
+          coordinateSystem: 'cartesian2d',
+          symbolSize: 20,
+          label: {
+            show: true
+          },
+          edgeSymbol: ['circle', 'arrow'],
+          edgeSymbolSize: [4, 10],
+          data: data,
+          links: links,
+
+          lineStyle: {
+            color: '#2f4554'
+          },
+          itemStyle: {
+            normal: {
+              color: '#5470C6'    //更改柱状图颜色
+            }
+          },
+        }
+      ]
     };
 
     if (option && typeof option === 'object') {
       myChart.setOption(option);
     }
+
+
+    // //雷达图   人才引进
+    // var dom = document.getElementById("technology");
+    // var myChart = echarts.init(dom);
+    // var app = {};
+    //
+    // var option;
+    //
+    //
+    // option = {
+    //   title: {
+    //     text: '人才引进',
+    //     textStyle: {
+    //       color: '#fff'
+    //     },
+    //     left: 'center'
+    //   },
+    //   // legend: {
+    //   //   data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）'],
+    //   // },
+    //   radar: {
+    //     radius: 60,
+    //     center: ['50%', '55%'],
+    //     // shape: 'circle',
+    //     indicator: [
+    //       {name: '博士', max: 1000},
+    //       {name: '普通本科', max: 1000},
+    //       {name: '重点本科 ', max: 1000},
+    //       {name: '硕士', max: 1000},
+    //       {name: '大专', max: 1000}
+    //       // {name: '市场（Marketing）', max: 25000}
+    //     ]
+    //   },
+    //   series: [{
+    //     itemStyle:{
+    //       normal:{
+    //         color: '#3C9FDA'
+    //       }
+    //     },
+    //     // name: '预算 vs 开销（Budget vs spending）',
+    //     type: 'radar',
+    //     data: [
+    //       {
+    //         value: [423, 600, 911, 851,904 ],
+    //         name: '实际开销（Actual Spending）'
+    //       }
+    //     ]
+    //   }]
+    // };
+    //
+    // if (option && typeof option === 'object') {
+    //   myChart.setOption(option);
+    // }
 
 
   });
