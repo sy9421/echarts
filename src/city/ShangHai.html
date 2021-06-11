@@ -57,11 +57,11 @@
   }
 
   .table caption{
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 36px;
+    /*text-align: center;*/
+    /*color: #fff;*/
+    /*font-weight: bold;*/
+    /*font-size: 18px;*/
+    /*line-height: 36px;*/
   }
   .back{
     margin-top: 35px;
@@ -506,8 +506,8 @@
 
     //  企业类型饼状图
 
-    var dom = document.getElementById("enterprise");
-    var myChart = echarts.init(dom);
+    var enterprise = document.getElementById("enterprise");
+    var myChart1 = echarts.init(enterprise);
     var app = {};
 
     var option;
@@ -555,14 +555,14 @@
     };
 
     if (option && typeof option === 'object') {
-      myChart.setOption(option);
+      myChart1.setOption(option);
     }
 
 
     //资金补贴 条形图
 
-    var dom = document.getElementById("subsidies");
-    var myChart = echarts.init(dom);
+    var subsidies = document.getElementById("subsidies");
+    var myChart2 = echarts.init(subsidies);
     var app = {};
 
     var option;
@@ -611,14 +611,14 @@
     };
 
     if (option && typeof option === 'object') {
-      myChart.setOption(option);
+      myChart2.setOption(option);
     }
 
 
 
     //雷达图
-    var dom = document.getElementById("technology");
-    var myChart = echarts.init(dom);
+    var technology = document.getElementById("technology");
+    var myChart3 = echarts.init(technology);
     var app = {};
 
     var option;
@@ -666,7 +666,16 @@
     };
 
     if (option && typeof option === 'object') {
-      myChart.setOption(option);
+      myChart3.setOption(option);
+    }
+
+    /********** 浏览器窗口改变时，重置报表大小 ****************/
+    window.onresize = function () {
+
+      provinceMap.resize();
+      myChart1.resize();
+      myChart2.resize();
+      myChart3.resize();
     }
   })
 </script>

@@ -366,22 +366,26 @@
       return res;
     };
     //数据转换，转换后格式：[{fromName:'cityName', toName:'cityName', coords:[[lng, lat], [lng, lat]]}, {...}]
-    const convertFlyData = function (data) {
+    const convertFlyData = function (data,a,b) {
       let res = [];
+
       for (let i = 0; i < data.length; i++) {
         let dataItem = data[i];
-        let toCoord = flyGeo[dataItem[0].name];
-        let fromCoord = flyGeo[dataItem[1].name];
+        let toCoord = flyGeo[dataItem[1].name];
+        let fromCoord = flyGeo[dataItem[0].name];
         if (fromCoord && toCoord) {
           res.push({
-            fromName: dataItem[1].name,
-            toName: dataItem[0].name,
+            fromName: dataItem[0].name,
+            toName: dataItem[1].name,
             coords: [fromCoord, toCoord]
           });
         }
       }
       return res;
     };
+
+
+
     //报表配置
     const flySeries = [];
     [[originName, flyVal]].forEach(function (item, i) {
@@ -392,7 +396,7 @@
           symbol: ['none', 'none'],
           symbolSize: 0,
           effect: { //特效线配置
-            show: false,
+            show: true,
             period: 5, //特效动画时间，单位s
             trailLength: 0.1, //特效尾迹的长度，从0到1
             symbol: 'arrow',
@@ -400,7 +404,7 @@
           },
           lineStyle: {
             normal: {
-              color: '#f19000',
+              color: '#efb54d',
               width: 1,
               opacity: 0.6,
               curveness: 0.2 //线的平滑度
@@ -535,9 +539,7 @@
     flyMap.setOption(flyMapOpt);
 
     /********** 浏览器窗口改变时，重置报表大小 ****************/
-    window.onresize = function () {
-      flyMap.resize();
-    }
+
 
     flyMap.on('click', function (params) {
       switch (params.name) {
@@ -557,8 +559,8 @@
     });
     //  企业类型饼状图
 
-    var dom = document.getElementById("subsidies");
-    var myChart = echarts.init(dom);
+    var subsidies = document.getElementById("subsidies");
+    var myChart1 = echarts.init(subsidies);
     var app = {};
 
     var option;
@@ -604,14 +606,14 @@
     };
 
     if (option && typeof option === 'object') {
-      myChart.setOption(option);
+      myChart1.setOption(option);
     }
 
 
     //资金补贴 条形图
 
-    var dom = document.getElementById("technology");
-    var myChart = echarts.init(dom);
+    var technology = document.getElementById("technology");
+    var myChart2 = echarts.init(technology);
     var app = {};
 
     var option;
@@ -660,13 +662,13 @@
     };
 
     if (option && typeof option === 'object') {
-      myChart.setOption(option);
+      myChart2.setOption(option);
     }
 
 
     //飞地  横向柱状图
-    var dom = document.getElementById("place");
-    var myChart = echarts.init(dom);
+    var place = document.getElementById("place");
+    var myChart3 = echarts.init(place);
     var app = {};
 
     var option;
@@ -716,13 +718,13 @@
     };
 
     if (option && typeof option === 'object') {
-      myChart.setOption(option);
+      myChart3.setOption(option);
     }
 
     //笛卡尔坐标系
 
-    var dom = document.getElementById("cityMap");
-    var myChart = echarts.init(dom);
+    var cityMap = document.getElementById("cityMap");
+    var myChart4 = echarts.init(cityMap);
     var app = {};
 
     var option;
@@ -792,13 +794,13 @@
     };
 
     if (option && typeof option === 'object') {
-      myChart.setOption(option);
+      myChart4.setOption(option);
     }
 
 
     // //雷达图   人才引进
-    // var dom = document.getElementById("technology");
-    // var myChart = echarts.init(dom);
+    // var technology = document.getElementById("technology");
+    // var myChart = echarts.init(technology);
     // var app = {};
     //
     // var option;
@@ -848,7 +850,14 @@
     // if (option && typeof option === 'object') {
     //   myChart.setOption(option);
     // }
-
+    /********** 浏览器窗口改变时，重置报表大小 ****************/
+    window.onresize = function () {
+      flyMap.resize();
+      myChart1.resize();
+      myChart2.resize();
+      myChart3.resize();
+      myChart4.resize();
+    }
 
   });
 
